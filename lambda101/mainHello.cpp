@@ -4,8 +4,6 @@
 #include <string>
 #include <iostream>
 
-#include "hello.h"
-
 using namespace v8;
 
 void saySomething(const FunctionCallbackInfo<Value>& args) {

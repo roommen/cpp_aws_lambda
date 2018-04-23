@@ -2,7 +2,7 @@ NODE101 = node101.node
 
 binding:
 	node-gyp configure build
-	mkdir node_modules
+	mkdir -p node_modules
 	cp build/Release/$(NODE101) node_modules/.
 
 clean:
