@@ -1,19 +1,14 @@
-#include <iostream>
-#include "passphrase.h"
+#include "encDec.h"
+// #include "passphrase.h"
 
-using namespace std;
+File::File(string name) {
+    this->name = name;
+}
 
-class File {
-private:
-    string name;
-public:
-    File(string name): name(name) {}
-    void encrypt();
-    void decrypt();
-};
+void File::encrypt() {
+    cout << "Encrypt file" << endl;
+}
 
-int main(int argc, char **argv) {
-
-
-    return 0;
+void File::decrypt() {
+    cout << "Decrypt file" << endl;
 }

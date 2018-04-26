@@ -15,4 +15,5 @@ read accessKey
 echo -n "Enter AWS Secret Access Key :: "
 read secretAccessKey
 
+# Change this to genPP as the target in the Makefile
 ./mainPP $sn $ac
