@@ -15,5 +15,11 @@ read accessKey
 echo -n "Enter AWS Secret Access Key :: "
 read secretAccessKey
 
+# Call the Makefile to create genPP dynamically (for PoC perspective)
+
 # Change this to genPP as the target in the Makefile
 ./mainPP $sn $ac
+
+# Create custom executable with the customer's passphrase and encrypt each file under the folder
+
+# Use boto s3 to upload them into bucket
