@@ -29,7 +29,12 @@ cd genPP; cp passphrase.h ../customerEncDec; cd ..
 # Create custom executable with the customer's password
 make -C customerEncDec install
 
-# Invoke custEncDec with the filename to encrypt
-cd customerEncDec; ./customerEncDec $filename; cd ..
+# Invoke customerEncDec with the filename to encrypt
+cd customerEncDec; ./customerEncDec "encrypt" $filename; cd ..
+cd sampleFiles; rm -f $filename; cd ..
+
+# Invoke customerEncDec with the filename.enc to decrypt
+cd customerEncDec; ./customerEncDec "decrypt" $filename; cd ..
+cd sampleFiles; rm -f *.enc; cd ..
 
 # Use boto s3 to upload them into bucket
