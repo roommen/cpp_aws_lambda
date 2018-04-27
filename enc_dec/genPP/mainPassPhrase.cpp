@@ -3,12 +3,14 @@
 #include "genPassPhrase.h"
 #include "sha256.h"
 
+#define PASSPHRASE_H "passphrase.h"
+
 using namespace std;
 
 /* Create the customer specific passphrase.h file */
 void createCustomerPassPhraseHeaderFile(string sha256_pp) {
     ofstream pp_h;
-    pp_h.open("passphrase.h", ios::out|ios::trunc);
+    pp_h.open(PASSPHRASE_H, ios::out|ios::trunc);
     pp_h << "#ifndef PASSPHRASE_H_" << endl;
     pp_h << "#define PASSPHRASE_H_" << endl;
     pp_h << endl;

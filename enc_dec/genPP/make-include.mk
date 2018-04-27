@@ -1,6 +1,4 @@
 # Common definitions
-PASSPHRASE_DIR = /usr/local/pp
-
 GPP = g++
 GPP_FLAGS = -Wall -g -std=c++1y
 

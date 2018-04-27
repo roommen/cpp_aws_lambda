@@ -16,10 +16,13 @@ echo -n "Enter AWS Secret Access Key :: "
 read secretAccessKey
 
 # Call the Makefile to create genPP dynamically (for PoC perspective)
-make
+make -C genPP install
 
 # Invoke genPP with SN and AC to generate custom passphrase.h
-./genPP $sn $ac
+cd genPP; ./genPP $sn $ac; cd ..
+
+# Copy passphrase.h to customerEncDec folder
+cd genPP; cp passphrase.h ../customerEncDec
 
 # Create custom executable with the customer's passphrase and encrypt each file under the folder
 

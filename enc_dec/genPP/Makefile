@@ -12,3 +12,4 @@ install:
 
 clean:
 	rm -f $(GEN_PP)
+	rm -f passphrase.h
