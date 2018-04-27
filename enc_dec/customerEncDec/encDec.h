@@ -3,9 +3,9 @@ using namespace std;
 
 class File {
 private:
-    string name;
+    char *filename;
 public:
-    File(string name);
+    File(char *filename);
     void encrypt();
     void decrypt();
 };

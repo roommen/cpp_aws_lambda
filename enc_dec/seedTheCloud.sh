@@ -6,6 +6,8 @@
 sn="BOS-774999580613"
 ac="YWU-FFM"
 
+# Provide name of the file for encryption
+filename="age_gender.py"
 
 # You would be prompted for entering the S3 Bucket Name, AWS_Access_Key_ID and AWS_Secret_Access_Key
 echo -n "Enter S3 Bucket Name of AWS (files will be uploaded here) :: "
@@ -22,8 +24,12 @@ make -C genPP install
 cd genPP; ./genPP $sn $ac; cd ..
 
 # Copy passphrase.h to customerEncDec folder
-cd genPP; cp passphrase.h ../customerEncDec
+cd genPP; cp passphrase.h ../customerEncDec; cd ..
 
-# Create custom executable with the customer's passphrase and encrypt each file under the folder
+# Create custom executable with the customer's password
+make -C customerEncDec install
+
+# Invoke custEncDec with the filename to encrypt
+cd customerEncDec; ./customerEncDec $filename; cd ..
 
 # Use boto s3 to upload them into bucket
