@@ -23,8 +23,9 @@ make -C genPP install
 # Invoke genPP with SN and AC to generate custom passphrase.h
 cd genPP; ./genPP $sn $ac; cd ..
 
-# Copy passphrase.h to customerEncDec folder
+# Copy passphrase.h to customerEncDec and node folder
 cd genPP; cp passphrase.h ../customerEncDec; cd ..
+cd genPP; cp passphrase.h ../node; cd ..
 
 # Create custom executable with the customer's password
 make -C customerEncDec install
