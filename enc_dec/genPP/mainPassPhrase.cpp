@@ -19,6 +19,7 @@ void createCustomerPassPhraseHeaderFile(string sha256_pp) {
     pp_h << "#define CUSTOMER_PASSPHRASE \"" << sha256_pp << "\"" << endl;
     pp_h << endl;
     pp_h << "#endif /* PASSPHRASE_H_ */" << endl;
+    pp_h.close();
 }
 
 int main(int argc, char **argv) {
