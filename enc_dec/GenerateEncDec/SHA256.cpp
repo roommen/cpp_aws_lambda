@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <sstream>
 #include <openssl/sha.h>
+#include "SHA256.h"
 
 using namespace std;
 
