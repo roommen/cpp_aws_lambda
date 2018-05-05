@@ -1,6 +1,8 @@
 #ifndef GENERATE_PASSPHRASE_H_
 #define GENERATE_PASSPHRASE_H_
 
+#define PASSPHRASE_H "passphrase.h"
+
 using namespace std;
 
 class PassPhrase {

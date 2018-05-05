@@ -1,5 +1,5 @@
 #include <iostream>
-#include "generatePassPhrase.h"
+#include "GeneratePassPhrase.h"
 
 PassPhrase::PassPhrase(string sn, string ac) {
     this->sn = sn;
@@ -43,4 +43,3 @@ void PassPhrase::createPassPhraseHeaderFile(string sha256_pp) {
     pp_h << "#endif /* PASSPHRASE_H_ */" << endl;
     pp_h.close();
 }
-
