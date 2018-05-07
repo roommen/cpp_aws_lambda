@@ -18,24 +18,21 @@ echo -n "Enter AWS Secret Access Key :: "
 read secretAccessKey
 
 # Call the Makefile to create genPP dynamically (for PoC perspective)
-make -C genPP install
+cd GenerateEncDec; make genPP; cd ..
 
-# Invoke genPP with SN and AC to generate custom passphrase.h
-cd genPP; ./genPP $sn $ac; cd ..
+# Invoke genPP with SN and AC to generate customer specific passphrase.h
+cd GenerateEncDec; ./genPP $sn $ac; cd ..
 
-# Copy passphrase.h to customerEncDec and node folder
-cd genPP; cp passphrase.h ../customerEncDec; cd ..
-cd genPP; cp passphrase.h ../node; cd ..
-
-# Create custom executable with the customer's password
-make -C customerEncDec install
+# Create executable with the customer specific password
+cd GenerateEncDec; make custEncDec; cd ..
 
 # Invoke customerEncDec with the filename to encrypt
-cd customerEncDec; ./customerEncDec "encrypt" $filename; cd ..
-cd sampleFiles; rm -f $filename; cd ..
+cd GenerateEncDec; ./custEncDec "encrypt" $filename; cd ..
+
+# Remove the original file for checking the decryption process
+# cd sampleFiles; rm -f $filename; cd ..
 
 # Invoke customerEncDec with the filename.enc to decrypt
-cd customerEncDec; ./customerEncDec "decrypt" $filename; cd ..
-cd sampleFiles; rm -f *.enc; cd ..
+# cd GenerateEncDec; ./custEncDec "decrypt" $filename; cd ..
 
 # Use boto s3 to upload them into bucket
