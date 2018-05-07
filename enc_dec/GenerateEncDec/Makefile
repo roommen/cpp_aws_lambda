@@ -2,14 +2,20 @@ ROOT := .
 
 include $(ROOT)/make-include.mk
 
-SRCS = genPassPhrase.cpp sha256.cpp mainPassPhrase.cpp
-GEN_PP = genPP
+GENPP_SRCS = GeneratePassPhrase.cpp SHA256.cpp MainGeneratePassPhrase.cpp
+GENPP = genPP
+CUSTENCDEC_SRCS = CustomerEncryptDecrypt.cpp MainCustomerEncryptDecrypt.cpp
+CUSTENCDEC = custEncDec
 
-all: install
+all: $(GENPP)
 
-install:
-	$(GPP) $(GPP_FLAGS) $(SRCS) -o $(GEN_PP) $(LDFLAGS)
+$(GENPP):
+	$(GCC) $(GCC_FLAGS) $(GENPP_SRCS) -o $(GENPP) $(LDFLAGS)
+
+$(CUSTENCDEC):
+	$(GCC) $(GCC_FLAGS) $(CUSTENCDEC_SRCS) -o $(CUSTENCDEC)
 
 clean:
-	rm -f $(GEN_PP)
+	rm -f $(GENPP)
+	rm -f $(CUSTENCDEC)
 	rm -f passphrase.h

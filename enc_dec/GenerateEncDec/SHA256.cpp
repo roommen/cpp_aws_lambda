@@ -4,8 +4,6 @@
 #include <openssl/sha.h>
 #include "SHA256.h"
 
-using namespace std;
-
 string sha256(const string str)
 {
     unsigned char hash[SHA256_DIGEST_LENGTH];

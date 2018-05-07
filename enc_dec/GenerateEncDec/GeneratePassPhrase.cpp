@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "GeneratePassPhrase.h"
 
 PassPhrase::PassPhrase(string sn, string ac) {
