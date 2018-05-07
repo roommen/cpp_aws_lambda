@@ -1,5 +1,5 @@
-#ifndef CUSTOMER_ENCRYPT_DECRYPT_H_
-#define CUSTOMER_ENCRYPT_DECRYPT_H_
+#ifndef CUSTOMER_ENCRYPT_H_
+#define CUSTOMER_ENCRYPT_H_
 
 using namespace std;
 
@@ -12,4 +12,4 @@ public:
     void decrypt();
 };
 
-#endif /* CUSTOMER_ENCRYPT_DECRYPT_H_ */
+#endif /* CUSTOMER_ENCRYPT_H_ */

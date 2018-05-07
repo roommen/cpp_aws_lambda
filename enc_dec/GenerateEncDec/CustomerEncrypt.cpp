@@ -1,5 +1,5 @@
 #include <iostream>
-#include "CustomerEncryptDecrypt.h"
+#include "CustomerEncrypt.h"
 #include "passphrase.h"
 
 #define MAX_CMD_LEN 256
