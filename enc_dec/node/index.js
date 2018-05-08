@@ -1,7 +1,7 @@
-var nodedec = require('./node_modules/nodedec.node');
+var custDec = require('./node_modules/custDec.node');
 
 exports.handler = function(event, context) {
-    nodeenc.calcPrime(event["fileName"], function(results) {
+    custDec.fileDecrypt(event["fileName"], function(results) {
         context.succeed(results);
     });
 };

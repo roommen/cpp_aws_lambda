@@ -1,4 +1,4 @@
-NODEDEC = nodedec.node
+NODEDEC = custDec.node
 
 binding:
 	node-gyp configure build
