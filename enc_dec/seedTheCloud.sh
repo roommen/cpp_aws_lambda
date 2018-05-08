@@ -24,10 +24,10 @@ cd GenerateEncDec; make genPP; cd ..
 cd GenerateEncDec; ./genPP $sn $ac; cd ..
 
 # Create executable with the customer specific password
-cd GenerateEncDec; make custEnc; cd ..
+cd GenerateEncDec; make custEncDec; cd ..
 
 # Invoke customerEncDec with the filename to encrypt
-cd GenerateEncDec; ./custEnc "encrypt" $filename; cd ..
+cd GenerateEncDec; ./custEncDec "encrypt" $filename; cd ..
 
 # Remove the original file for checking the decryption process
 # cd sampleFiles; rm -f $filename; cd ..
