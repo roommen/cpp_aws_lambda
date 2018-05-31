@@ -1,6 +1,7 @@
-var node101 = require('node101');
+var sh = require('./node_modules/sayhello.node');
 
 exports.handler = function(event, context) {
-    console.log("sample log");
-    context.succeed(node101.speak());
+    sh.helloName(event["name"], function(results) {
+        context.succeed(results);
+    });
 };

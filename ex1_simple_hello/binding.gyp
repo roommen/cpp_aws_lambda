@@ -1,9 +1,9 @@
-# Define the targets to be created - node101
+# Define the targets to be created - sayhello
 {
 	"targets": [
 	{
-		'target_name': 'node101',
-		'sources': [ 'mainHello.cpp' ],
+		'target_name': 'sayhello',
+		'sources': [ 'mainSayHello.cpp', 'sayHello.cpp' ],
 	}
 	]
 }
