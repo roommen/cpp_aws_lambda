@@ -1,11 +1,11 @@
-NODE101 = node101.node
+SAYHELLO = sayhello.node
 
 binding:
 	node-gyp configure build
 	mkdir -p node_modules
-	cp build/Release/$(NODE101) node_modules/.
+	cp build/Release/$(SAYHELLO) node_modules/.
 
 clean:
 	rm -Rf build
-	rm -f $(NODE101)
+	rm -f $(SAYHELLO)
 	rm -rf node_modules

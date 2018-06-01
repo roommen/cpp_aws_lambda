@@ -13,9 +13,10 @@ struct Work {
 	std::string result;
 };
 
-void helloNameWrapper(const char* name) {
+string sayWrapper(const char* name) {
 	SayHello sh(name);
-	sh.sayHello();
+	string res = sh.say();
+	return res;
 }
 
 /* Called by libuv worker in separate thread */
@@ -25,7 +26,7 @@ static void WorkAsync(uv_work_t *req)
 
 	/* This is the worker thread, lets build up the results */
 	/* Allocated results from the heap because we'll need to access in the event loop later to send back */
-	work->result = helloNameWrapper(work->reqJSON.data());
+	work->result = sayWrapper(work->reqJSON.data());
 }
 
 /* Called by libuv in event loop when async function completes */
@@ -49,7 +50,7 @@ static void WorkAsyncComplete(uv_work_t *req, int status)
 	delete work;
 }
 
-void helloNameASync(const v8::FunctionCallbackInfo<v8::Value>& args) {
+void sayASync(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	Isolate* isolate = args.GetIsolate();
 
 	Work * work = new Work();
@@ -68,9 +69,9 @@ void helloNameASync(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	args.GetReturnValue().Set(Undefined(isolate));
 }
 
-/* helloName is the call issued from js which then leads to calling the method helloNameASync() */
+/* say is the call issued from js which then leads to calling the method sayASync() */
 void init(Handle <Object> exports, Handle<Object> module) {
-	NODE_SET_METHOD(exports, "helloName", helloNameASync);
+	NODE_SET_METHOD(exports, "say", sayASync);
 }
 
 /* The entry point to initialize the node module */

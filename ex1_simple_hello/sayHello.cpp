@@ -2,6 +2,6 @@
 
 SayHello::SayHello(string name): name(name) {}
 
-void SayHello::sayHello() {
-    cout << "Hello " << name << endl;
+string SayHello::say() {
+    return "Hello " + name;
 }

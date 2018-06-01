@@ -9,7 +9,7 @@ using namespace std;
 class SayHello {
 public:
     SayHello(string name);
-    void sayHello();
+    string say();
 private:
     string name;
 };
