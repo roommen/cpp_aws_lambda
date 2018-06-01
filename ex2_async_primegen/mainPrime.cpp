@@ -74,4 +74,4 @@ void init(Handle <Object> exports, Handle<Object> module) {
 	NODE_SET_METHOD(exports, "calcPrime", calcPrimeASync);
 }
 
-NODE_MODULE(node102, init)
+NODE_MODULE(primegen, init)

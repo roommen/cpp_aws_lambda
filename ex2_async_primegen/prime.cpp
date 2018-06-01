@@ -28,6 +28,5 @@ string Prime::genPrimes(const char* primeLimit)
 		primeString += to_string(x);
 		primeString += ",";
 	}
-	cout << primeString;
 	return primeString;
 }

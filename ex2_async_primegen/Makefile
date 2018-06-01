@@ -1,11 +1,11 @@
-NODE102 = node102.node
+PRIMEGEN = primegen.node
 
 binding:
 	node-gyp configure build
 	mkdir node_modules
-	cp build/Release/$(NODE102) node_modules/.
+	cp build/Release/$(PRIMEGEN) node_modules/.
 
 clean:
 	rm -Rf build
-	rm -f $(NODE102)
+	rm -f $(PRIMEGEN)
 	rm -rf node_modules

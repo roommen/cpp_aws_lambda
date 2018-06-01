@@ -1,8 +1,8 @@
-# Define the targets to be created - node102
+# Define the targets to be created - primegen
 {
 	"targets": [
 	{
-		'target_name': 'node102',
+		'target_name': 'primegen',
 		'sources': [ 'mainPrime.cpp', 'prime.cpp' ],
 	}
 	]

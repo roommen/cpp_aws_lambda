@@ -1,7 +1,7 @@
-var node102 = require('./node_modules/node102.node');
+var pg = require('./node_modules/primegen.node');
 
 exports.handler = function(event, context) {
-    node102.calcPrime(event["primeLimit"], function(results) {
+    pg.calcPrime(event["range"], function(results) {
         context.succeed(results);
     });
 };
