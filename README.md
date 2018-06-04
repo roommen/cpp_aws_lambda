@@ -11,3 +11,6 @@ A good series of reference articles:<br/><br/>
 3. C++ processing from Node.js (Passing Arrays of Objects) - https://nodeaddons.com/c-processing-from-node-js-part-3-arrays/<br/>
 4. C++ processing from Node.js (Asynchronous addons) - https://nodeaddons.com/c-processing-from-node-js-part-4-asynchronous-addons/<br/>
 5. Building an Asynchronous C++ Addon for Node.js using Nan - https://nodeaddons.com/building-an-asynchronous-c-addon-for-node-js-using-nan/<br/>
+<br/>
+6. C++ Addons as AWS Lambda functions - https://nodeaddons.com/c-addons-as-aws-lambda-functions/
+<br/>
